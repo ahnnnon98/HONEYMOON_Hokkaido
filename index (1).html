@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amatatsu Family — Honeymoon 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:    #f2f0ec;
+    --bg2:   #e8e6e1;
+    --dark:  #161412;
+    --accent:#3d3a36;
+    --muted: #88837d;
+    --line:  rgba(22,20,18,0.1);
+    --line2: rgba(22,20,18,0.055);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.85;
+    min-height: 100vh;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrapper { max-width: 760px; margin: 0 auto; padding: 0 0 120px; overflow-x: hidden; }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: fadeIn 1s ease both;
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    .cover {
+      grid-template-columns: 1fr 1fr;
+      min-height: 100svh;
+      width: 100vw;
+      max-width: 100%;
+    }
+    .cover-left { padding: 36px 16px; overflow: hidden; }
+    .cover-right { padding: 36px 16px; gap: 18px; overflow: hidden; }
+    .cover-logo { font-size: 7px; letter-spacing: 0.2em; }
+    .cover-eyebrow { font-size: 7px; letter-spacing: 0.25em; }
+    .cover-title-jp { font-size: clamp(13px, 4.5vw, 22px); letter-spacing: 0.06em; }
+    .cover-title-en { font-size: clamp(11px, 3.5vw, 18px); letter-spacing: 0.06em; }
+    .cover-item-label { font-size: 8px; letter-spacing: 0.2em; }
+    .cover-item-value { font-size: 11px; letter-spacing: 0.04em; }
+    .cover-item-sub { font-size: 8.5px; letter-spacing: 0.02em; }
+    .cover-item { padding-bottom: 14px; }
+    .section { padding: 40px 20px 0; }
+    .section-label { font-size: 16px; }
+    .event-name { font-size: 12px; }
+    .event-detail { font-size: 10px; }
+    .timeline-item { grid-template-columns: 52px 1fr; gap: 10px; }
+    .footer { grid-template-columns: 1fr; }
+    .footer-left, .footer-right { padding: 28px 24px; }
+    .card-grid { grid-template-columns: 80px 1fr; }
+    .emergency-item { grid-template-columns: 80px 1fr; }
+  }
+
+  .cover-left {
+    background: var(--dark);
+    padding: 64px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-left::before {
+    content: 'JOURNEY';
+    position: absolute;
+    bottom: -40px; right: -20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 220px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .cover-main { position: relative; z-index: 1; text-align: center; width: 100%; }
+
+  .cover-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .cover-title-jp {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3.8vw, 32px);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: #f4f0e8;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+
+  .cover-title-en {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3.8vw, 32px);
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cover-bottom {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.28);
+    line-height: 2.2;
+    position: relative; z-index: 1;
+  }
+
+  .cover-right {
+    background: var(--bg2);
+    padding: 64px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+    border-left: 1px solid var(--line);
+  }
+
+  .cover-item { border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+  .cover-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .cover-item-label {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .cover-item-value {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--dark);
+    white-space: nowrap;
+  }
+  .cover-item-sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 52px 0; animation: fadeUp 0.6s ease both; }
+  .section:nth-child(2) { animation-delay: 0.05s; }
+  .section:nth-child(3) { animation-delay: 0.10s; }
+  .section:nth-child(4) { animation-delay: 0.15s; }
+  .section:nth-child(5) { animation-delay: 0.20s; }
+  .section:nth-child(6) { animation-delay: 0.25s; }
+  .section:nth-child(7) { animation-delay: 0.30s; }
+  .section:nth-child(8) { animation-delay: 0.35s; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: nowrap;
+  }
+
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: var(--dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-label {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-spacer { flex: 1; }
+
+  .section-date {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  /* ── DAY THEME ── */
+  .day-theme {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 22px;
+    padding: 4px 12px;
+    border: 1px solid var(--line);
+    background: var(--bg2);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { list-style: none; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line2);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+
+  .time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-top: 3px;
+    white-space: nowrap;
+  }
+
+  .event-name {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .event-detail {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 5px;
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  .move-tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border: 1px solid rgba(22,20,18,0.15);
+    background: rgba(22,20,18,0.03);
+    padding: 3px 10px;
+    margin-top: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  /* ── INFO CARD ── */
+  .info-card {
+    border: 1px solid var(--line);
+    background: var(--bg2);
+    padding: 22px 26px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .info-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--dark);
+  }
+
+  .card-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--dark);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 8px 16px;
+  }
+  .card-grid dt {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .card-grid dd {
+    font-size: 12px;
+    color: var(--dark);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  /* ── SPOTS ── */
+  .spots-grid { display: grid; gap: 1px; background: var(--line); }
+  .spot-card {
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+    padding: 14px 18px;
+    align-items: start;
+  }
+  .spot-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.3;
+    padding-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .spot-name {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .spot-address {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+  .spot-access {
+    font-size: 10px;
+    color: #5a8896;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; columns: 2; }
+  @media(max-width:520px){ .checklist { columns: 1; } }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line2);
+    break-inside: avoid;
+    font-weight: 400;
+  }
+  .check-box {
+    width: 12px; height: 12px;
+    border: 1px solid rgba(22,20,18,0.2);
+    flex-shrink: 0;
+  }
+
+  /* ── EMERGENCY ── */
+  .emergency-list { list-style: none; }
+  .emergency-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line2);
+    align-items: center;
+  }
+  .emergency-item:last-child { border-bottom: none; }
+  .e-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+  .emergency-item span:last-child {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  /* ── NOTE ── */
+  .note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border-left: 2px solid var(--dark);
+    background: rgba(22,20,18,0.03);
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--line);
+  }
+  .footer-left {
+    background: var(--dark);
+    padding: 40px 44px;
+  }
+  .footer-title {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: rgba(244,240,232,0.88);
+    margin-bottom: 8px;
+  }
+  .footer-sub {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.28);
+    text-transform: uppercase;
+  }
+  .footer-right {
+    background: var(--bg2);
+    padding: 40px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-align: center;
+    line-height: 2.2;
+    font-weight: 400;
+  }
+
+
+
+  /* ── PASSWORD SCREEN ── */
+  #pw-screen {
+    position: fixed; inset: 0;
+    background: #161412;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    gap: 28px;
+  }
+  #pw-screen .pw-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+  }
+  #pw-screen .pw-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 6vw, 44px);
+    letter-spacing: 0.12em;
+    color: #f2f0ec;
+    text-align: center;
+    line-height: 1.2;
+  }
+  #pw-screen input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #f2f0ec;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.35em;
+    text-align: center;
+    width: 220px;
+    padding: 8px 0;
+    outline: none;
+  }
+  #pw-screen input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0.3em; }
+  #pw-screen .pw-hint {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.25);
+  }
+  /* ── CHECKLIST interactive ── */
+  .checklist li { cursor: pointer; transition: opacity 0.2s; }
+  .checklist li.checked { opacity: 0.4; }
+  .checklist li.checked .check-inner::after {
+    content: '';
+    position: absolute;
+    top: 1px; left: 2px;
+    width: 8px; height: 5px;
+    border-left: 1.5px solid var(--dark);
+    border-bottom: 1.5px solid var(--dark);
+    transform: rotate(-45deg);
+  }
+  .check-box {
+    position: relative;
+    width: 13px; height: 13px;
+    border: 1px solid rgba(22,20,18,0.3);
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .check-inner {
+    position: absolute;
+    inset: 0;
+  }
+  li.checked .check-box { background: var(--dark); border-color: var(--dark); }
+  li.checked .check-inner::after {
+    content: '';
+    position: absolute;
+    top: 1px; left: 2px;
+    width: 7px; height: 4px;
+    border-left: 1.5px solid #f2f0ec;
+    border-bottom: 1.5px solid #f2f0ec;
+    transform: rotate(-45deg);
+  }
+
+  /* ── SPOT MAP LINK ── */
+  .spot-card a {
+    text-decoration: none;
+    color: inherit;
+    display: contents;
+  }
+  .spot-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: #5a8896;
+    border: 1px solid rgba(90,136,150,0.3);
+    padding: 2px 8px;
+    margin-top: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .spot-map-link:hover { background: rgba(90,136,150,0.08); }
+  @keyframes fadeIn  { from { opacity:0 } to { opacity:1 } }
+  @keyframes fadeUp  { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
+</style>
+</head>
+<body>
+<div id="pw-screen">
+  <p class="pw-title">Private Access Only</p>
+  <p class="pw-main">Honeymoon<br>2026</p>
+  <input type="password" id="pw-input" placeholder="PASSWORD" maxlength="20" autocomplete="off">
+  <p class="pw-hint" id="pw-hint">Enter password to continue</p>
+</div>
+<div class="wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-left">
+      <div class="cover-main">
+        <h1 class="cover-title-jp">Honeymoon Travel Guide<br>2026</h1>
+        <p class="cover-title-en">Amatatsu Family</p>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-item">
+        <p class="cover-item-label">Destination</p>
+        <p class="cover-item-value">北海道 · 定山渓</p>
+        <p class="cover-item-sub">Jozankei Hot Spring, Hokkaido</p>
+      </div>
+      <div class="cover-item">
+        <p class="cover-item-label">Period</p>
+        <p class="cover-item-value">6月3日 - 5日</p>
+        <p class="cover-item-sub">June 3 – 5, 2026 /<br>2泊3日</p>
+      </div>
+      <div class="cover-item">
+        <p class="cover-item-label">Hotel</p>
+        <p class="cover-item-value">翠巌 本館</p>
+        <p class="cover-item-sub">「紅葉賀」301号室 / Suite</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">Day 01</span>
+      
+      <div class="section-spacer"></div>
+      <span class="section-date">2026.06.03 WED</span>
+    </div>
+    <ul class="timeline">
+      <li class="timeline-item">
+        <span class="time">06:10</span>
+        <div>
+          <p class="event-name">🏠 東銀座 出発</p>
+          <p class="event-detail">東銀座駅（都営浅草線）→ 京急空港線直通 → 羽田空港 / 所要約40分 ¥649前後（IC）</p>
+          <span class="move-tag">京急直通 / 乗換なし</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">07:20</span>
+        <div>
+          <p class="event-name">羽田空港 着 · チェックイン</p>
+          <p class="event-detail">JAL国内線カウンター（出発60分前目安）</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">08:20</span>
+        <div>
+          <p class="event-name">✈︎ JAL505便 羽田 発</p>
+          <p class="event-detail">東京（羽田）→ 札幌（新千歳）</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">09:55</span>
+        <div>
+          <p class="event-name">新千歳空港 着</p>
+          <span class="move-tag">JR快速エアポート 約37分 ¥1,150</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">11:00</span>
+        <div><p class="event-name">さっぽろ駅 着</p></div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">11:00〜</span>
+        <div>
+          <p class="event-name">ラーメン横丁 — 昼食</p>
+          <p class="event-detail">札幌市中央区南5条西3丁目6 N·グランデビル1F / 地下鉄南北線「すすきの駅」徒歩約3分</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">13:00〜</span>
+        <div>
+          <p class="event-name">札幌市時計台 ＆ 大通公園</p>
+          <p class="event-detail">時計台 — 北海道札幌市中央区北1条西2丁目 8:45〜17:10 / 大通公園 — 札幌市中央区大通西1〜12丁目</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">14:40</span>
+        <div>
+          <p class="event-name">定山渓へ移動</p>
+          <p class="event-detail">大通西5丁目（昭和ビル前）発 / 要事前予約（前日19時まで）</p>
+          <span class="move-tag">翠巌 無料シャトルバス 14:40発 / 大通→定山渓</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">15:00〜</span>
+        <div>
+          <p class="event-name">🏨 翠巌 本館 チェックイン</p>
+          <p class="event-detail">「紅葉賀」301号室 スイート / 展望風呂付（92平米）/ 冷蔵庫飲料フリー・ドリップマシン・Wi-Fi完備</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">15:00〜</span>
+        <div>
+          <p class="event-name">翠巌ストレージルームへ</p>
+          <p class="event-detail">1Fにてソフトドリンク・ビール・アイス・駄菓子などを自由にお持ちいただけます。</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">夕方〜</span>
+        <div>
+          <p class="event-name">🛁 展望風呂 ＆ 湯めぐり</p>
+          <p class="event-detail">客室展望風呂 / 第一寶亭留プレミアムアクセスで系列13施設の温泉・ジェラートなども無料</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">夜</span>
+        <div>
+          <p class="event-name">🍽 ディナー — 松直棘曲</p>
+          <p class="event-detail">調理長 小松直輝によるジャンルレスフルコース / メインは道産牛 / 一斉スタート・約2時間 / 一部フリードリンク制（ビール・ハイボール・自家製リキュール等）</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">Day 02</span>
+      
+      <div class="section-spacer"></div>
+      <span class="section-date">2026.06.04 THU</span>
+    </div>
+    <ul class="timeline">
+      <li class="timeline-item">
+        <span class="time">朝</span>
+        <div>
+          <p class="event-name">🏨 翠巌 本館 朝食</p>
+          <p class="event-detail">6品程度のセットメニュー / 前日夕方までに予約でランチへ振替も可</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">10:30</span>
+        <div>
+          <p class="event-name">定山渓 → 札幌へ移動</p>
+          <p class="event-detail">定山渓温泉 10:30発 / 要事前予約（前日19時まで）</p>
+          <span class="move-tag">翠巌 無料シャトルバス 10:30発 / 定山渓→大通駅</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">11:30〜</span>
+        <div>
+          <p class="event-name">サッポロビール園 — ランチ</p>
+          <p class="event-detail">札幌市東区北7条東9丁目2-10 / TEL 0570-098-346 / ランチ 11:30〜15:00（L.O.14:40）/ 路線バス 札幌駅北口→約7分 ¥240</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">13:30〜</span>
+        <div>
+          <p class="event-name">回転寿し トリトン 北8条光星店</p>
+          <p class="event-detail">札幌市東区北8条東5-19-1 / TEL 011-374-8666 / 11:00〜22:00（L.O.21:30）/ JR苗穂駅 徒歩約10分 / サッポロビール園から徒歩圏内 ※予約不可・混雑時は待ち時間あり</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">17:00</span>
+        <div>
+          <p class="event-name">定山渓へ戻る</p>
+          <p class="event-detail">大通西5丁目（昭和ビル前）17:00発 / 要事前予約（前日19時まで）</p>
+          <span class="move-tag">翠巌 無料シャトルバス 17:00発 / 大通→定山渓</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">18:00〜</span>
+        <div>
+          <p class="event-name">🍲 ディナー — 創作しゃぶしゃぶ（お部屋にて）</p>
+          <p class="event-detail">定山渓精肉店店主×第一寶亭留調理人による創作しゃぶしゃぶセット / 前菜〜メイン〜〆まで5段重でお部屋の専用扉にお届け / セルフサービス</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">夜〜</span>
+        <div>
+          <p class="event-name">🛁 展望風呂 ＆ 温泉</p>
+          <p class="event-detail">渓谷を眺めながらゆっくりと。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">Day 03</span>
+      
+      <div class="section-spacer"></div>
+      <span class="section-date">2026.06.05 FRI</span>
+    </div>
+    <ul class="timeline">
+      <li class="timeline-item">
+        <span class="time">〜10:00</span>
+        <div><p class="event-name">🏨 翠巌 本館 朝食</p></div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">11:00</span>
+        <div>
+          <p class="event-name">🏨 チェックアウト</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">10:30</span>
+        <div>
+          <p class="event-name">定山渓 → 札幌へ移動</p>
+          <p class="event-detail">定山渓温泉 10:30発 / 要事前予約（前日19時まで）</p>
+          <span class="move-tag">翠巌 無料シャトルバス 10:30発 / 定山渓→大通駅</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">12:00〜</span>
+        <div>
+          <p class="event-name">円山動物園</p>
+          <p class="event-detail">札幌市中央区宮ケ丘3番地1 / TEL 011-621-1426 / 開園 9:30〜16:30（最終入園16:00）入場料 大人¥800 / 地下鉄東西線「円山公園駅」徒歩約15分</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">14:30〜</span>
+        <div>
+          <p class="event-name">ジンギスカン — 昼食</p>
+          <p class="event-detail">札幌市内のジンギスカン店にて。事前予約推奨。</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">16:00〜</span>
+        <div>
+          <p class="event-name">さっぽろ羊ヶ丘展望台</p>
+          <p class="event-detail">札幌市豊平区羊ケ丘1番地 / TEL 011-851-3080 / 営業 9:00〜18:00（6月）入場料 大人¥1,000 / 地下鉄「福住駅」→バス（福84）約10分 / 白い恋人ソフトクリームも名物。</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">17:30〜</span>
+        <div>
+          <p class="event-name">札幌駅へ移動</p>
+          <span class="move-tag">バス→地下鉄 または タクシー</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">18:30〜</span>
+        <div>
+          <p class="event-name">新千歳空港 着 — 夕食 ＆ お土産</p>
+          <p class="event-detail">空港内レストランにて夕食 / お土産購入はフライト前に余裕を持って。</p>
+          <span class="move-tag">JR快速エアポート 約37分 ¥1,150</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">21:25</span>
+        <div>
+          <p class="event-name">✈︎ JAL530便 新千歳 発</p>
+          <p class="event-detail">札幌（新千歳）→ 東京（羽田）</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="time">着後</span>
+        <div>
+          <p class="event-name">🏠 東銀座 着</p>
+          <p class="event-detail">羽田空港（京急）→ 都営浅草線直通 → 東銀座駅 / 所要約40分 ¥649前後（IC）</p>
+          <span class="move-tag">京急直通 / 乗換なし</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- FLIGHT -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">—</span>
+      <span class="section-label">Flights</span>
+      <div class="section-spacer"></div>
+    </div>
+    <div class="info-card">
+      <p class="card-title">✈︎ 往路 — JAL505便 / 6月3日（水）</p>
+      <dl class="card-grid">
+        <dt>出発</dt><dd>東京（羽田）08:20 発</dd>
+        <dt>到着</dt><dd>札幌（新千歳）09:55 着</dd>
+        <dt>航空会社</dt><dd>日本航空（JAL）TEL 0570-025-071</dd>
+      </dl>
+    </div>
+    <div class="info-card">
+      <p class="card-title">✈︎ 復路 — JAL530便 / 6月5日（金）</p>
+      <dl class="card-grid">
+        <dt>出発</dt><dd>札幌（新千歳）21:25 発</dd>
+        <dt>到着</dt><dd>東京（羽田）着</dd>
+        <dt>航空会社</dt><dd>日本航空（JAL）TEL 0570-025-071</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- HOTEL -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">—</span>
+      <span class="section-label">Hotel</span>
+      <div class="section-spacer"></div>
+    </div>
+    <div class="info-card">
+      <p class="card-title">翠巌 本館 — 「紅葉賀」301号室</p>
+      <dl class="card-grid">
+        <dt>種別</dt><dd>スイート / 展望風呂付客室（92平米）</dd>
+        <dt>所在地</dt><dd>北海道 定山渓温泉</dd>
+        <dt>TEL</dt><dd>011-215-1118</dd>
+        <dt>チェックイン</dt><dd>15:00〜</dd>
+        <dt>チェックアウト</dt><dd>11:00</dd>
+        <dt>設備</dt><dd>展望風呂・リビング・冷蔵庫飲料フリー・Wi-Fi・ドリップマシン</dd>
+        <dt>予約番号</dt><dd>—（記入してください）</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- SPOTS -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">—</span>
+      <span class="section-label">Spots</span>
+      <div class="section-spacer"></div>
+    </div>
+    <div class="spots-grid">
+      <div class="spot-card">
+        <span class="spot-num">01</span>
+        <div>
+          <p class="spot-name">元祖さっぽろラーメン横丁</p><a href="https://www.google.com/maps/search/?api=1&query=元祖さっぽろラーメン横丁+札幌" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">札幌市中央区南5条西3丁目6 N·グランデビル1F</p>
+          <p class="spot-access">地下鉄南北線「すすきの駅」徒歩約3分</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">02</span>
+        <div>
+          <p class="spot-name">札幌市時計台</p><a href="https://www.google.com/maps/search/?api=1&query=札幌市時計台" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">北海道札幌市中央区北1条西2丁目 TEL 011-231-0838</p>
+          <p class="spot-access">地下鉄「大通駅」市役所側出口 徒歩約5分 / 8:45〜17:10</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">03</span>
+        <div>
+          <p class="spot-name">大通公園</p><a href="https://www.google.com/maps/search/?api=1&query=大通公園+札幌" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">札幌市中央区大通西1〜12丁目（全長約1.5km）</p>
+          <p class="spot-access">地下鉄「大通駅」直結</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">04</span>
+        <div>
+          <p class="spot-name">回転寿し トリトン 北8条光星店</p><a href="https://maps.app.goo.gl/Caw2Krrj7Mdizmjj9" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">札幌市東区北8条東5-19-1 / TEL 011-374-8666</p>
+          <p class="spot-access">JR苗穂駅 徒歩約10分 / 営業 11:00〜22:00 / 予約不可</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">05</span>
+        <div>
+          <p class="spot-name">サッポロビール園</p><a href="https://www.google.com/maps/search/?api=1&query=サッポロビール園+札幌" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">札幌市東区北7条東9丁目2-10 TEL 0570-098-346</p>
+          <p class="spot-access">JR苗穂駅北口 徒歩約8分 / 路線バス 札幌駅北口→約7分 ¥240</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">06</span>
+        <div>
+          <p class="spot-name">札幌市円山動物園</p><a href="https://www.google.com/maps/search/?api=1&query=札幌市円山動物園" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">札幌市中央区宮ケ丘3番地1 TEL 011-621-1426</p>
+          <p class="spot-access">地下鉄東西線「円山公園駅」徒歩約15分 / 入場料 大人¥800</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">07</span>
+        <div>
+          <p class="spot-name">さっぽろ羊ヶ丘展望台（クラーク博士像）</p><a href="https://www.google.com/maps/search/?api=1&query=さっぽろ羊ヶ丘展望台" target="_blank" class="spot-map-link">Open in Maps ↗</a>
+          <p class="spot-address">北海道札幌市豊平区羊ケ丘1番地 TEL 011-851-3080</p>
+          <p class="spot-access">地下鉄「福住駅」→バス（福84）約10分 / 入場料 大人¥1,000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKING -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">—</span>
+      <span class="section-label">Packing</span>
+      <div class="section-spacer"></div>
+    </div>
+    <ul class="checklist">
+      <li><span class="check-box"><span class="check-inner"></span></span>航空券（eチケット）</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>財布・現金</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>クレジットカード</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>スマートフォン</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>充電器・モバイルバッテリー</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>イヤホン</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>カメラ</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>着替え（3日分＋予備）</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>歩きやすい靴</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>雨具・折り畳み傘</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>薄手の羽織り</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>常備薬</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>日焼け止め</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>洗面用具</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>エコバッグ</li>
+      <li><span class="check-box"><span class="check-inner"></span></span>このしおり 📖</li>
+    </ul>
+  </div>
+
+  <!-- EMERGENCY -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">—</span>
+      <span class="section-label">Emergency</span>
+      <div class="section-spacer"></div>
+    </div>
+    <ul class="emergency-list">
+      <li class="emergency-item"><span class="e-label">警察</span><span>110</span></li>
+      <li class="emergency-item"><span class="e-label">救急・消防</span><span>119</span></li>
+      <li class="emergency-item"><span class="e-label">新千歳空港</span><span>0123-23-0111</span></li>
+      <li class="emergency-item"><span class="e-label">ホテル</span><span>翠巌 本館 / TEL 011-215-1118（9:00〜19:00）</span></li>
+      <li class="emergency-item"><span class="e-label">JAL</span><span>0570-025-071</span></li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p class="footer-title">Honeymoon</p>
+      <p class="footer-sub">Amatatsu Family · Hokkaido</p>
+    </div>
+    <div class="footer-right">
+      Love chuchu memory.
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+// ── Password ──
+const PASS = 'chuchu2026';
+const pwScreen = document.getElementById('pw-screen');
+const pwInput  = document.getElementById('pw-input');
+const pwHint   = document.getElementById('pw-hint');
+
+function unlock() {
+  pwScreen.style.display = 'none';
+}
+
+pwInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    if (pwInput.value === PASS) {
+      unlock();
+    } else {
+      pwHint.textContent = 'Wrong password. Try again.';
+      pwHint.style.color = '#c26060';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  }
+});
+
+pwInput.addEventListener('input', () => {
+  if (pwInput.value === PASS) unlock();
+});
+
+// ── Checklist ──
+const items = document.querySelectorAll('.checklist li');
+items.forEach(li => {
+  li.addEventListener('click', () => {
+    li.classList.toggle('checked');
+  });
+});
+</script>
+</body>
+</html>
